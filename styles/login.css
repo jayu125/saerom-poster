@@ -1,0 +1,122 @@
+@import url(`https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css`);
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Segoe UI" "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main {
+  width: 100%;
+  max-width: 480px;
+  min-width: 350px;
+  height: 100%;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#textWrap {
+  width: 100%;
+  height: max-content;
+  margin-bottom: 48px;
+  user-select: none;
+}
+
+.text {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.text-sub1 {
+  font-size: 13px;
+  font-weight: 400;
+  color: #c2c2c2;
+  margin-top: 8px;
+}
+
+.text-sub2 {
+  font-size: 13px;
+  font-weight: 400;
+  color: #c2c2c2;
+  margin-top: 4px;
+}
+
+#login-btn {
+  width: 100%;
+  border: 2px solid #e2e2e2;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+#google-icon {
+  width: 36px;
+  height: 36px;
+  margin-left: 12px;
+}
+
+#login-text {
+  font-size: 18px;
+  font-weight: 700;
+  width: calc(100% - 36px - 36px - 12px);
+  text-align: center;
+  margin-right: 36px;
+  user-select: none;
+}
+
+/* 기본 스타일 (모바일 우선) */
+
+/* 작은 태블릿 이상 (min-width: 600px) */
+@media (min-width: 600px) {
+  /* 여기에 내용 작성 */
+}
+
+/* 큰 태블릿 이상 (min-width: 768px) */
+@media (min-width: 768px) {
+  /* 여기에 내용 작성 */
+}
+
+/* 데스크탑 이상 (min-width: 1024px) */
+@media (min-width: 1024px) {
+  /* 여기에 내용 작성 */
+}
+
+/* 큰 데스크탑 이상 (min-width: 1280px) */
+@media (min-width: 1280px) {
+  /* 여기에 내용 작성 */
+}
+
+/* 초대형 화면 (min-width: 1536px) */
+@media (min-width: 1536px) {
+  /* 여기에 내용 작성 */
+}

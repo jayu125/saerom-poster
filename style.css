@@ -1,0 +1,380 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+:root {
+  /* 칼럼 폭(스텝의 단위)과 갭을 고정. 필요 시 미디어 쿼리로 단계 조절 */
+  --tile-w: 175px;
+  --gap: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+body {
+  font-family: sans-serif;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 14px;
+}
+.category-tab {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+.category-tab.active {
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  text-decoration: underline;
+  color: black;
+}
+
+.view-toggle {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #333;
+  cursor: pointer;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+.carousel-wrapper {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+}
+.movie-card {
+  position: relative;
+  min-width: 380px;
+  max-width: 380px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.movie-card img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+}
+.movie-info {
+  padding: 10px;
+  text-align: center;
+}
+.movie-info h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+.badge {
+  background: gold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-left: 6px;
+}
+.movie-meta {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+.reserve-btn {
+  padding: 6px 16px;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+.reserve-btn-copy {
+  padding: 6px 16px;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.list-view {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+}
+.list-item {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  position: relative;
+}
+.list-item img {
+  width: 100px;
+  border-radius: 8px;
+}
+.list-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.list-info .movie-meta {
+  margin: 6px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 20px;
+  padding: 4px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+.arrow.left {
+  left: 5px;
+}
+.arrow.right {
+  right: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+.modal-content img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.close-btn {
+  margin-top: 20px;
+  background: #ddd;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-form label {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+.add-form input,
+.add-form textarea,
+.add-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.add-form button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.unabled {
+  display: none;
+}
+
+.enabled {
+  display: inline;
+}
+
+.grid-view {
+  display: none;
+  /* 칼럼 수 자동, 카드 폭은 160~220px 사이에서 반응 */
+  grid-template-columns: repeat(auto-fit, var(--tile-w));
+  gap: var(--gap);
+
+  /* 컨테이너가 콘텐츠 폭만큼만 차지 → 뷰포트가 커져도 가운데에서 가만히 */
+  width: max-content;
+  margin-inline: auto;
+  max-width: 100%;
+  justify-content: center;
+  margin-top: 36px;
+  perspective: 900px;
+}
+
+.signOut-btn {
+  border-color: #f73c3c;
+  color: #f73c3c;
+}
+
+#current-logged-in-ac {
+  width: max-content;
+  font-size: 14;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.delete-doc-btn {
+  border-color: #f73c3c;
+  color: #f73c3c;
+  margin-left: 4px;
+  z-index: 99;
+  position: relative;
+  display: none;
+}
+
+#warnModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.cancel-modal-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.delete-confirm-btn {
+  border-color: #f73c3c;
+  color: #f73c3c;
+  margin-left: 4px;
+  z-index: 99;
+  position: relative;
+}
+
+.enable-delete .delete-doc-btn {
+  display: inline;
+}
+
+.list-item > .delete-doc-btn {
+  position: absolute;
+  z-index: 99;
+  right: 40px;
+}
+
+.grid-card {
+  position: relative;
+  width: var(--tile-w);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 10, 0.15);
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+  aspect-ratio: 7 / 10; /* 포스터 비율 */
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 160ms cubic-bezier(0.2, 0.6, 0.2, 1), box-shadow 160ms;
+}
+
+.grid-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.grid-card .tilt-hovered {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.grid-card .tilt-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: translateZ(60px); /* 살짝 위 레이어 */
+  opacity: 0;
+  transition: opacity 160ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-card,
+  .grid-card .tilt-glare {
+    transition: none !important;
+  }
+}
+
+.tilt-glare {
+  position: absolute;
+  inset: 0; /* 카드 전체 덮기 */
+  pointer-events: none; /* 마우스 이벤트 통과 */
+  mix-blend-mode: screen; /* 배경과 밝기 합성 */
+  opacity: 0; /* 기본은 안 보이게 */
+  transition: opacity 160ms ease-out;
+  transform: translateZ(60px); /* 살짝 위쪽에 올려 입체감 */
+  border-radius: inherit; /* 카드 둥근 모서리 따라감 */
+
+  /* 기본 배경 (JS에서 마우스 위치에 따라 업데이트 가능) */
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0) 60%
+  );
+}

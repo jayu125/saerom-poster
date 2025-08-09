@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>새롬고 포스터 슬라이드</title>
+    <link href="/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-bar">
+        <div class="category-tabs" id="categoryTabs"></div>
+        <div class="view-toggle" id="viewToggle">리스트형 보기</div>
+      </div>
+
+      <div class="carousel-container" id="carouselView">
+        <button class="arrow left">←</button>
+        <div class="carousel-wrapper" id="carouselWrapper">
+          <div class="carousel-track" id="carouselTrack"></div>
+        </div>
+        <button class="arrow right">→</button>
+      </div>
+
+      <div class="list-view" id="listView"></div>
+      <div class="grid-view" id="gridView">그리드뷰는 공사중입니다 ㅠㅠ</div>
+
+      <div class="modal" id="movieModal">
+        <div class="modal-content">
+          <img id="modalImg" src="" alt="포스터" />
+          <h2 id="modalTitle">제목</h2>
+          <p id="modalDescription">설명</p>
+          <button class="close-btn">닫기</button>
+        </div>
+      </div>
+
+      <div id="warnModal">
+        <div class="modal-content">
+          <div class="cancel-modal-text">삭제하시겠습니까?</div>
+          <button class="reserve-btn-copy cancel-btn">취소</button>
+          <button class="reserve-btn-copy delete-confirm-btn">삭제</button>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          margin-bottom: 30px;
+          display: flex;
+          justify-content: center;
+          gap: 14px;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          left: 0;
+        "
+      >
+        <div id="current-logged-in-ac"></div>
+        <button
+          class="reserve-btn unabled"
+          style="font-size: 15px; background: #f0f0f0; padding: 8px 20px"
+        >
+          ＋ 업로드하기
+        </button>
+        <button
+          class="reserve-btn signOut-btn"
+          style="font-size: 15px; background: #f0f0f0; padding: 8px 20px"
+        >
+          로그아웃
+        </button>
+      </div>
+
+      <div class="modal" id="addModal">
+        <div class="modal-content">
+          <form class="add-form" onsubmit="submitNewCard(event)">
+            <h2>카드 추가</h2>
+            <label>제목<input type="text" id="newTitle" required /></label>
+            <label>뱃지<input type="text" id="newBadge" /></label>
+            <label>기간<input type="text" id="newMeta" /></label>
+            <label
+              >이미지 주소<input
+                type="text"
+                id="newImg"
+                placeholder="https://..."
+            /></label>
+            <label>설명<textarea id="newDesc" rows="3"></textarea></label>
+            <label
+              >카테고리
+              <select id="newCategory" required>
+                <option value="">선택하세요</option>
+              </select>
+            </label>
+            <button id="add-poster-btn" type="submit">추가</button>
+            <button type="button" class="close-btn" id="close-add-modal">
+              취소
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/firebase.js" type="module"></script>
+    <script src="/script.js" type="module"></script>
+  </body>
+</html>
