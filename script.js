@@ -8,7 +8,7 @@ import {
 } from "./firebase.js";
 import { initTilt } from "./scripts/tilt.js";
 
-const allowedEmailArr = ["2411129@saerom.hs.kr"];
+const allowedEmailArr = ["2411129@saerom.hs.kr", "2410310@saerom.hs.kr"];
 
 const categories = [
   "전체",
