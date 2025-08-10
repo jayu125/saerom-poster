@@ -55,7 +55,7 @@ export async function handleGoogleSign() {
     .then(async () => {
       await signInWithPopup(auth, provider).then((data) => {
         if (auth.currentUser.email.endsWith("@saerom.hs.kr")) {
-          window.location.assign("./pages/index.html");
+          window.location.assign("/index.html");
         } else {
           alert(
             "학교 이메일 (@saerom.hs.kr 로 끝나는 이메일) 로 로그인해주세요!"
